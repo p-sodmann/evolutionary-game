@@ -1,0 +1,68 @@
+/* src/components/GameCanvas/GameCanvas.css */
+
+.gameCanvas {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #f0f0f0;
+    overflow: hidden;
+  }
+  
+  .blob {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: blue;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .blob:hover {
+    transform: scale(1.2); /* Slight enlargement on hover */
+  }
+  
+  .food {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: green;
+    border-radius: 50%;
+  }
+  
+  .blob-stats {
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 5px;
+    font-size: 12px;
+    pointer-events: none;
+    z-index: 10;
+  }
+  
+  .blob-stats-persistent {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 12px;
+    width: 200px;
+    z-index: 20;
+  }
+  
+  /* src/components/GameCanvas/GameCanvas.css */
+
+@keyframes blink {
+    0% { opacity: 1; }
+    50% { opacity: 0.2; }
+    100% { opacity: 1; }
+  }
+  
+  .blink {
+    animation: blink 0.2s ease-in-out; /* Blink duration matches the timeout in Blob.eat */
+  }
+  
